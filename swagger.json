@@ -1,0 +1,2734 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Shyft Digitally 360",
+        "description": "This is Marketing Project",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:5000",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "Account",
+            "description": "API for Account in the system"
+        },
+        {
+            "name": "Business",
+            "description": "API for Business in the system"
+        },
+        {
+            "name": "Role",
+            "description": "API for Role in the system"
+        },
+        {
+            "name": "RefreshToken",
+            "description": "API for RefreshToken in the system"
+        },
+        {
+            "name": "Status",
+            "description": ""
+        },
+        {
+            "name": "Types",
+            "description": ""
+        },
+        {
+            "name": "Contacts",
+            "description": ""
+        },
+        {
+            "name": "Source",
+            "description": ""
+        },
+        {
+            "name": "Organization",
+            "description": ""
+        },
+        {
+            "name": "History",
+            "description": ""
+        },
+        {
+            "name": "HistoryTypes",
+            "description": ""
+        },
+        {
+            "name": "HistoryFlags",
+            "description": ""
+        },
+        {
+            "name": "Deals",
+            "description": ""
+        },
+        {
+            "name": "DealStatus",
+            "description": ""
+        },
+        {
+            "name": "Projects",
+            "description": ""
+        },
+        {
+            "name": "Tasks",
+            "description": ""
+        },
+        {
+            "name": "TaskTemplate",
+            "description": ""
+        },
+        {
+            "name": "Lists",
+            "description": ""
+        },
+        {
+            "name": "ListsTags",
+            "description": ""
+        },
+        {
+            "name": "ContactField",
+            "description": ""
+        }
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/account": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Get all accounts in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "description": "Create new account in system",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New account is created",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Account"
+                ],
+                "description": "Create new account in system",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New account is created",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                }
+            }
+        },
+        "/account/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of account that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update account with give ID",
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete account with given ID",
+                "tags": [
+                    "Account"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                }
+            }
+        },
+        "/business": {
+            "get": {
+                "tags": [
+                    "Business"
+                ],
+                "summary": "Get all businesss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Business"
+                ],
+                "description": "Create new business in system",
+                "parameters": [
+                    {
+                        "name": "business",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New business is created",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Business"
+                ],
+                "description": "Create new business in system",
+                "parameters": [
+                    {
+                        "name": "business",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New business is created",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        }
+                    }
+                }
+            }
+        },
+        "/business/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of business that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update business with give ID",
+                "tags": [
+                    "Business"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete business with given ID",
+                "tags": [
+                    "Business"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Business"
+                        }
+                    }
+                }
+            }
+        },
+        "/role": {
+            "get": {
+                "tags": [
+                    "Role"
+                ],
+                "summary": "Get all roles in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Role"
+                ],
+                "description": "Create new role in system",
+                "parameters": [
+                    {
+                        "name": "role",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New role is created",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Role"
+                ],
+                "description": "Create new role in system",
+                "parameters": [
+                    {
+                        "name": "role",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New role is created",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                }
+            }
+        },
+        "/role/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of role that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update role with give ID",
+                "tags": [
+                    "Role"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete role with given ID",
+                "tags": [
+                    "Role"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                }
+            }
+        },
+        "/status": {
+            "get": {
+                "tags": [
+                    "Status"
+                ],
+                "summary": "Get all statuss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Status"
+                ],
+                "description": "Create new status in system",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New status is created",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Status"
+                ],
+                "description": "Create new status in system",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New status is created",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                }
+            }
+        },
+        "/status/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of status that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update status with give ID",
+                "tags": [
+                    "Status"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete status with given ID",
+                "tags": [
+                    "Status"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                }
+            }
+        },
+        "/types": {
+            "get": {
+                "tags": [
+                    "Types"
+                ],
+                "summary": "Get all typess in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Types"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Types"
+                ],
+                "description": "Create new types in system",
+                "parameters": [
+                    {
+                        "name": "types",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Types"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New types is created",
+                        "schema": {
+                            "$ref": "#/definitions/Types"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Types"
+                ],
+                "description": "Create new types in system",
+                "parameters": [
+                    {
+                        "name": "types",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Types"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New types is created",
+                        "schema": {
+                            "$ref": "#/definitions/Types"
+                        }
+                    }
+                }
+            }
+        },
+        "/types/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of types that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update types with give ID",
+                "tags": [
+                    "Types"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Types"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete types with given ID",
+                "tags": [
+                    "Types"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Types"
+                        }
+                    }
+                }
+            }
+        },
+        "/contact": {
+            "get": {
+                "tags": [
+                    "Contacts"
+                ],
+                "summary": "Get all contacts in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Contacts"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Contacts"
+                ],
+                "description": "Create new contact in system",
+                "parameters": [
+                    {
+                        "name": "contact",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Contacts"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New contact is created",
+                        "schema": {
+                            "$ref": "#/definitions/Contacts"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Contacts"
+                ],
+                "description": "Create new contact in system",
+                "parameters": [
+                    {
+                        "name": "contact",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Contacts"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New contact is created",
+                        "schema": {
+                            "$ref": "#/definitions/Contacts"
+                        }
+                    }
+                }
+            }
+        },
+        "/contact/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of contact that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update contact with give ID",
+                "tags": [
+                    "Contacts"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Contacts"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete contact with given ID",
+                "tags": [
+                    "Contacts"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Contacts"
+                        }
+                    }
+                }
+            }
+        },
+        "/lists": {
+            "get": {
+                "tags": [
+                    "Lists"
+                ],
+                "summary": "Get all listss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Lists"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Lists"
+                ],
+                "description": "Create new lists in system",
+                "parameters": [
+                    {
+                        "name": "lists",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Lists"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New lists is created",
+                        "schema": {
+                            "$ref": "#/definitions/Lists"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Lists"
+                ],
+                "description": "Create new lists in system",
+                "parameters": [
+                    {
+                        "name": "lists",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Lists"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New lists is created",
+                        "schema": {
+                            "$ref": "#/definitions/Lists"
+                        }
+                    }
+                }
+            }
+        },
+        "/lists/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of lists that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update lists with give ID",
+                "tags": [
+                    "Lists"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Lists"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete lists with given ID",
+                "tags": [
+                    "Lists"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Lists"
+                        }
+                    }
+                }
+            }
+        },
+        "/tasks": {
+            "get": {
+                "tags": [
+                    "Tasks"
+                ],
+                "summary": "Get all taskss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Tasks"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Tasks"
+                ],
+                "description": "Create new tasks in system",
+                "parameters": [
+                    {
+                        "name": "tasks",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Tasks"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New tasks is created",
+                        "schema": {
+                            "$ref": "#/definitions/Tasks"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Tasks"
+                ],
+                "description": "Create new tasks in system",
+                "parameters": [
+                    {
+                        "name": "tasks",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Tasks"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New tasks is created",
+                        "schema": {
+                            "$ref": "#/definitions/Tasks"
+                        }
+                    }
+                }
+            }
+        },
+        "/tasks/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of tasks that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update tasks with give ID",
+                "tags": [
+                    "Tasks"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Tasks"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete tasks with given ID",
+                "tags": [
+                    "Tasks"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Tasks"
+                        }
+                    }
+                }
+            }
+        },
+        "/tasktemplate": {
+            "get": {
+                "tags": [
+                    "TaskTemplate"
+                ],
+                "summary": "Get all tasktemplates in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TaskTemplate"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "TaskTemplate"
+                ],
+                "description": "Create new tasktemplate in system",
+                "parameters": [
+                    {
+                        "name": "tasktemplate",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/TaskTemplate"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New tasktemplate is created",
+                        "schema": {
+                            "$ref": "#/definitions/TaskTemplate"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "TaskTemplate"
+                ],
+                "description": "Create new tasktemplate in system",
+                "parameters": [
+                    {
+                        "name": "tasktemplate",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/TaskTemplate"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New tasktemplate is created",
+                        "schema": {
+                            "$ref": "#/definitions/TaskTemplate"
+                        }
+                    }
+                }
+            }
+        },
+        "/tasktemplate/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of tasktemplate that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update tasktemplate with give ID",
+                "tags": [
+                    "TaskTemplate"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/TaskTemplate"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete tasktemplate with given ID",
+                "tags": [
+                    "TaskTemplate"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/TaskTemplate"
+                        }
+                    }
+                }
+            }
+        },
+        "/history": {
+            "get": {
+                "tags": [
+                    "History"
+                ],
+                "summary": "Get all historys in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/History"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "History"
+                ],
+                "description": "Create new history in system",
+                "parameters": [
+                    {
+                        "name": "history",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/History"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New history is created",
+                        "schema": {
+                            "$ref": "#/definitions/History"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "History"
+                ],
+                "description": "Create new history in system",
+                "parameters": [
+                    {
+                        "name": "history",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/History"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New history is created",
+                        "schema": {
+                            "$ref": "#/definitions/History"
+                        }
+                    }
+                }
+            }
+        },
+        "/history/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of history that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update history with give ID",
+                "tags": [
+                    "History"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/History"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete history with given ID",
+                "tags": [
+                    "History"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/History"
+                        }
+                    }
+                }
+            }
+        },
+        "/deals": {
+            "get": {
+                "tags": [
+                    "Deals"
+                ],
+                "summary": "Get all dealss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Deals"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Deals"
+                ],
+                "description": "Create new deals in system",
+                "parameters": [
+                    {
+                        "name": "deals",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Deals"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New deals is created",
+                        "schema": {
+                            "$ref": "#/definitions/Deals"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Deals"
+                ],
+                "description": "Create new deals in system",
+                "parameters": [
+                    {
+                        "name": "deals",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Deals"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New deals is created",
+                        "schema": {
+                            "$ref": "#/definitions/Deals"
+                        }
+                    }
+                }
+            }
+        },
+        "/deals/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of deals that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update deals with give ID",
+                "tags": [
+                    "Deals"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Deals"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete deals with given ID",
+                "tags": [
+                    "Deals"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Deals"
+                        }
+                    }
+                }
+            }
+        },
+        "/projects": {
+            "get": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Get all projectss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Projects"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Projects"
+                ],
+                "description": "Create new projects in system",
+                "parameters": [
+                    {
+                        "name": "projects",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Projects"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New projects is created",
+                        "schema": {
+                            "$ref": "#/definitions/Projects"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Projects"
+                ],
+                "description": "Create new projects in system",
+                "parameters": [
+                    {
+                        "name": "project",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Projects"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New projects is created",
+                        "schema": {
+                            "$ref": "#/definitions/Projects"
+                        }
+                    }
+                }
+            }
+        },
+        "/projects/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of projects that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update projects with give ID",
+                "tags": [
+                    "Projects"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Projects"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete projects with given ID",
+                "tags": [
+                    "Projects"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Projects"
+                        }
+                    }
+                }
+            }
+        },
+        "/source": {
+            "get": {
+                "tags": [
+                    "Source"
+                ],
+                "summary": "Get all sources in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Source"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Source"
+                ],
+                "description": "Create new source in system",
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Source"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New source is created",
+                        "schema": {
+                            "$ref": "#/definitions/Source"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Source"
+                ],
+                "description": "Create new source in system",
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Source"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New source is created",
+                        "schema": {
+                            "$ref": "#/definitions/Source"
+                        }
+                    }
+                }
+            }
+        },
+        "/source/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of source that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update source with give ID",
+                "tags": [
+                    "Source"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Source"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete source with given ID",
+                "tags": [
+                    "Source"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization": {
+            "get": {
+                "tags": [
+                    "Organization"
+                ],
+                "summary": "Get all organizations in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Organization"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Organization"
+                ],
+                "description": "Create new organization in system",
+                "parameters": [
+                    {
+                        "name": "organization",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Organization"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New organization is created",
+                        "schema": {
+                            "$ref": "#/definitions/Organization"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Organization"
+                ],
+                "description": "Create new organization in system",
+                "parameters": [
+                    {
+                        "name": "organization",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Organization"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New organization is created",
+                        "schema": {
+                            "$ref": "#/definitions/Organization"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of organization that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update organization with give ID",
+                "tags": [
+                    "Organization"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Organization"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete organization with given ID",
+                "tags": [
+                    "Organization"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/organization"
+                        }
+                    }
+                }
+            }
+        },
+        "/historyFlags": {
+            "get": {
+                "tags": [
+                    "HistoryFlags"
+                ],
+                "summary": "Get all historyFlagss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/HistoryFlags"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "HistoryFlags"
+                ],
+                "description": "Create new historyFlags in system",
+                "parameters": [
+                    {
+                        "name": "historyFlags",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/HistoryFlags"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New historyFlags is created",
+                        "schema": {
+                            "$ref": "#/definitions/HistoryFlags"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "HistoryFlags"
+                ],
+                "description": "Create new historyFlags in system",
+                "parameters": [
+                    {
+                        "name": "historyFlags",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/HistoryFlags"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New historyFlags is created",
+                        "schema": {
+                            "$ref": "#/definitions/HistoryFlags"
+                        }
+                    }
+                }
+            }
+        },
+        "/historyFlags/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of historyFlags that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update historyFlags with give ID",
+                "tags": [
+                    "HistoryFlags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/HistoryFlags"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete historyFlags with given ID",
+                "tags": [
+                    "HistoryFlags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/HistoryFlags"
+                        }
+                    }
+                }
+            }
+        },
+        "/historyTypes": {
+            "get": {
+                "tags": [
+                    "HistoryTypes"
+                ],
+                "summary": "Get all historyTypess in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/historyTypes"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "HistoryTypes"
+                ],
+                "description": "Create new historyTypes in system",
+                "parameters": [
+                    {
+                        "name": "HistoryTypes",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/historyTypes"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New historyTypes is created",
+                        "schema": {
+                            "$ref": "#/definitions/historyTypes"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "HistoryTypes"
+                ],
+                "description": "Create new historyTypes in system",
+                "parameters": [
+                    {
+                        "name": "HistoryTypes",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/historyTypes"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New historyTypes is created",
+                        "schema": {
+                            "$ref": "#/definitions/historyTypes"
+                        }
+                    }
+                }
+            }
+        },
+        "/historyTypes/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of historyTypes that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update historyTypes with give ID",
+                "tags": [
+                    "HistoryTypes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/historyTypes"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete historyTypes with given ID",
+                "tags": [
+                    "HistoryTypes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/historyTypes"
+                        }
+                    }
+                }
+            }
+        },
+        "/dealStatus": {
+            "get": {
+                "tags": [
+                    "DealStatus"
+                ],
+                "summary": "Get all dealStatuss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dealStatus"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "DealStatus"
+                ],
+                "description": "Create new dealStatus in system",
+                "parameters": [
+                    {
+                        "name": "DealStatus",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/dealStatus"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New dealStatus is created",
+                        "schema": {
+                            "$ref": "#/definitions/dealStatus"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "DealStatus"
+                ],
+                "description": "Create new dealStatus in system",
+                "parameters": [
+                    {
+                        "name": "DealStatus",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/dealStatus"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New dealStatus is created",
+                        "schema": {
+                            "$ref": "#/definitions/dealStatus"
+                        }
+                    }
+                }
+            }
+        },
+        "/dealStatus/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of dealStatus that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update dealStatus with give ID",
+                "tags": [
+                    "DealStatus"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/dealStatus"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete dealStatus with given ID",
+                "tags": [
+                    "DealStatus"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/dealStatus"
+                        }
+                    }
+                }
+            }
+        },
+        "/listsTags": {
+            "get": {
+                "tags": [
+                    "ListsTags"
+                ],
+                "summary": "Get all dealStatuss in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/listsTags"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "ListsTags"
+                ],
+                "description": "Create new dealStatus in system",
+                "parameters": [
+                    {
+                        "name": "ListsTags",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/listsTags"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New dealStatus is created",
+                        "schema": {
+                            "$ref": "#/definitions/listsTags"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "ListsTags"
+                ],
+                "description": "Create new dealStatus in system",
+                "parameters": [
+                    {
+                        "name": "ListsTags",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/listsTags"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New dealStatus is created",
+                        "schema": {
+                            "$ref": "#/definitions/listsTags"
+                        }
+                    }
+                }
+            }
+        },
+        "/listsTags/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of dealStatus that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update dealStatus with give ID",
+                "tags": [
+                    "ListsTags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/listsTags"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete dealStatus with given ID",
+                "tags": [
+                    "ListsTags"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/listsTags"
+                        }
+                    }
+                }
+            }
+        },
+        "/contactField": {
+            "get": {
+                "tags": [
+                    "ContactField"
+                ],
+                "summary": "Get all contactFields in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/contactFields"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "ContactField"
+                ],
+                "description": "Create new contactField in system",
+                "parameters": [
+                    {
+                        "name": "ContactField",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/contactFields"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New contactField is created",
+                        "schema": {
+                            "$ref": "#/definitions/contactFields"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "ContactField"
+                ],
+                "description": "Create new contactField in system",
+                "parameters": [
+                    {
+                        "name": "ContactField",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/contactFields"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New contactField is created",
+                        "schema": {
+                            "$ref": "#/definitions/contactFields"
+                        }
+                    }
+                }
+            }
+        },
+        "/contactField/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of contactField that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Update contactField with give ID",
+                "tags": [
+                    "ContactField"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is updated",
+                        "schema": {
+                            "$ref": "#/definitions/contactFields"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete contactField with given ID",
+                "tags": [
+                    "ContactField"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/contactFields"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Account": {
+            "required": [
+                "firstName",
+                "lastName",
+                "password",
+                "email"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "Role": {
+            "required": [
+                "firstName",
+                "lastName",
+                "password",
+                "email"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "accountId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Business": {
+            "required": [
+                "type",
+                "name",
+                "country"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "employees": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "sales": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "emailSend": {
+                    "type": "boolean"
+                },
+                "accountId": {
+                    "type": "string"
+                }
+            }
+        },
+        "Status": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "Types": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "HistoryTypes": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "HistoryFlags": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "DealStatus": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "ProjectStatus": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "ListsTags": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "ContactField": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "Contacts": {
+            "required": [
+                "type",
+                "name",
+                "country"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "bestway": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "organizationId": {
+                    "type": "int"
+                },
+                "sourceId": {
+                    "type": "int"
+                },
+                "types": {
+                    "type": "array"
+                },
+                "status": {
+                    "type": "array"
+                },
+                "assignTo": {
+                    "type": "array"
+                }
+            }
+        },
+        "Deals": {
+            "required": [
+                "firstName",
+                "lastName",
+                "password",
+                "email"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "Projects": {
+            "required": [
+                "firstName",
+                "lastName",
+                "password",
+                "email"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "accountId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Tasks": {
+            "required": [
+                "type",
+                "name",
+                "country"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "employees": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "sales": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "emailSend": {
+                    "type": "boolean"
+                },
+                "accountId": {
+                    "type": "string"
+                }
+            }
+        },
+        "TaskTemplate": {
+            "required": [
+                "type",
+                "name",
+                "country"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "employees": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "sales": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "emailSend": {
+                    "type": "boolean"
+                },
+                "accountId": {
+                    "type": "string"
+                }
+            }
+        },
+        "Lists": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "Source": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                }
+            }
+        },
+        "Organization": {
+            "required": [
+                "type",
+                "name",
+                "country"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "bestway": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "organizationId": {
+                    "type": "int"
+                },
+                "sourceId": {
+                    "type": "int"
+                },
+                "types": {
+                    "type": "array"
+                },
+                "status": {
+                    "type": "array"
+                },
+                "assignTo": {
+                    "type": "array"
+                }
+            }
+        },
+        "History": {
+            "required": [
+                "type",
+                "name",
+                "country"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "bestway": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "organizationId": {
+                    "type": "int"
+                },
+                "sourceId": {
+                    "type": "int"
+                },
+                "types": {
+                    "type": "array"
+                },
+                "status": {
+                    "type": "array"
+                },
+                "assignTo": {
+                    "type": "array"
+                }
+            }
+        }
+    }
+}

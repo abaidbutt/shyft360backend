@@ -1,0 +1,340 @@
+model Organization {
+  id       Int        @id @default(autoincrement())
+  name     String
+  address  Json?
+  website  String?
+  assignTo User[]
+  image    String?
+  phone    String?
+  email    String?
+  tags     Json?
+  created  DateTime
+  contacts Contacts[]
+}
+
+model Shyft {
+  id        Int     @id @default(autoincrement())
+  type      String?
+  status    String
+  createdAt String
+}
+
+model User {
+  id          Int        @id @default(autoincrement())
+  email       String     @unique
+  firstName   String?
+  lastName    String?
+  password    String
+  mobilePhone String
+  interested  String
+  business    Business[]
+  permissions Json?
+  role        Role?      @default(USER)
+
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId Int?
+  Contacts       Contacts?     @relation(fields: [contactsId], references: [id])
+  contactsId     Int?
+  ContactsNote   ContactsNote? @relation(fields: [contactsNoteId], references: [id])
+  contactsNoteId Int?
+
+  Project        Project?         @relation(fields: [projectId], references: [id])
+  projectId      Int?
+  Deals          Deals?           @relation(fields: [dealsId], references: [id])
+  dealsId        Int?
+  History        History?         @relation(fields: [historyId], references: [id])
+  historyId      Int?
+  Task           Task?            @relation(fields: [taskId], references: [id])
+  taskId         Int?
+  PaymentAccount PaymentAccount[]
+}
+
+enum Role {
+  USER
+  ADMIN
+  MANAGER
+}
+
+model Business {
+  id           Int    @id @default(autoincrement())
+  businessType String
+  businessName String
+
+  country        String
+  annualSales    String
+  businessTime   String
+  employees      String
+  website        String
+  user           User?   @relation(fields: [userId], references: [id])
+  userId         Int?
+  businessNumber String?
+  legalName      String?
+  address        Json?
+  firstName      String?
+  lastName       String?
+  birthdate      String?
+}
+
+model PaymentAccount {
+  id             Int     @id @default(autoincrement())
+  name           String
+  address        Json?
+  businessName   String
+  email          String?
+  phone          String?
+  country        String
+  annualSales    String
+  businessTime   String
+  employees      String
+  website        String
+  user           User?   @relation(fields: [userId], references: [id])
+  userId         Int?
+  businessNumber String?
+  legalName      String?
+
+  firstName String?
+  lastName  String?
+  birthdate String?
+}
+
+// type Permissions {
+//   ads              String
+//   content          String
+//   creative         String
+//   crm              String
+//   emailmarketing   String
+//   files            String
+//   forms            String
+//   intelligence     String
+//   listings         String
+//   nurture          String
+//   platformsettings String
+//   reputation       String
+//   scheduling       String
+//   social           String
+//   textmarketing    String
+// }
+
+model Contacts {
+  id             Int           @id @default(autoincrement())
+  email          String
+  name           String
+  source         Forms[]
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId Int?
+  assignTo       User[]
+  type           Json?
+  phone          String?
+  mobilephone    String?
+  bestway        String?
+  color          String?
+  status         String?
+  History        History?      @relation(fields: [historyId], references: [id])
+  historyId      Int?
+  Project        Project?      @relation(fields: [projectId], references: [id])
+  projectId      Int?
+  Deals          Deals?        @relation(fields: [dealsId], references: [id])
+  dealsId        Int?
+  Task           Task?         @relation(fields: [taskId], references: [id])
+  taskId         Int?
+}
+
+model ContactsNote {
+  id      Int     @id @default(autoincrement())
+  details String?
+  notify  User[]
+}
+
+model History {
+  id      Int        @id @default(autoincrement())
+  contact Contacts[]
+  title   String?
+  details String?
+  type    String?
+  notify  User[]
+}
+
+model Deals {
+  id          Int        @id @default(autoincrement())
+  contact     Contacts[]
+  title       String?
+  details     String?
+  link        String?
+  value       String?
+  schedule    String?
+  assignedTo  User[]
+  closingDate String?
+  status      Json?
+  Task        Task?      @relation(fields: [taskId], references: [id])
+  taskId      Int?
+}
+
+model Project {
+  id             Int        @id @default(autoincrement())
+  contact        Contacts[]
+  title          String?
+  details        String?
+  link           String?
+  value          String?
+  frequency      String?
+  assignedTo     User[]
+  completionDate String?
+  calender       Boolean?
+  status         Json?
+  Calender       Calender?  @relation(fields: [calenderId], references: [id])
+  calenderId     Int?
+  commission     String?
+  Task           Task?      @relation(fields: [taskId], references: [id])
+  taskId         Int?
+}
+
+model Calender {
+  id      Int       @id @default(autoincrement())
+  project Project[]
+}
+
+model Task {
+  id         Int        @id @default(autoincrement())
+  Contact    Contacts[]
+  title      String?
+  details    String?
+  link       String?
+  projects   Project[]
+  deals      Deals[]
+  color      String?
+  attachment Json?
+  assignTo   User[]
+  startDate  DateTime?
+  endDate    DateTime?
+  allday     Boolean?
+  repeat     Json?
+
+  remind  String?
+  private Boolean?
+}
+
+model TaskTemplate {
+  id Int @id @default(autoincrement())
+
+  title      String?
+  details    String?
+  link       String?
+  urgent     Boolean?
+  color      String?
+  attachment Json?
+
+  startDate DateTime?
+  endDate   DateTime?
+  allday    Boolean?
+  repeat    Json?
+
+  remind  String?
+  private Boolean?
+  status  Status[]
+  types   Types[]
+}
+
+model List {
+  id            Int     @id @default(autoincrement())
+  name          String?
+  description   String?
+  contactType   Json?
+  contactStatus Json?
+  assignedTo    Json?
+  tags          Json?
+  filters       Json?
+}
+
+model Forms {
+  id Int @id @default(autoincrement())
+
+  Contacts   Contacts? @relation(fields: [contactsId], references: [id])
+  contactsId Int?
+}
+
+model Types {
+  id             Int           @id @default(autoincrement())
+  name           String
+  TaskTemplate   TaskTemplate? @relation(fields: [taskTemplateId], references: [id])
+  taskTemplateId Int?
+}
+
+model Status {
+  id             Int           @id @default(autoincrement())
+  name           String
+  TaskTemplate   TaskTemplate? @relation(fields: [taskTemplateId], references: [id])
+  taskTemplateId Int?
+}
+
+// model Post {
+//   id        Int      @id @default(autoincrement())
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   title     String
+//   content   String?
+//   published Boolean  @default(false)
+//   viewCount Int      @default(0)
+//   author    User?    @relation(fields: [authorId], references: [id])
+//   authorId  Int?
+// }
+
+// payment systme
+model Customer {
+  id          Int     @id @default(autoincrement())
+  name        String?
+  email       String
+  description String
+  country     String?
+  address     Json?
+  phone       String?
+  shipping    String?
+
+  invoicePrefix  String?
+  taxIds         Json?
+  Subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
+  subscriptionId Int?
+  Invoice        Invoice?      @relation(fields: [invoiceId], references: [id])
+  invoiceId      Int?
+}
+
+model Plan {
+  id             Int           @id @default(autoincrement())
+  name           String
+  description    String?
+  pricing        Json?
+  Subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
+  subscriptionId Int?
+}
+
+model Subscription {
+  id          Int        @id @default(autoincrement())
+  customer    Customer[]
+  pricingPlan Plan[]
+  schedule    Json?
+  billing     Json?
+}
+
+model Invoice {
+  id           Int        @id @default(autoincrement())
+  customer     Customer[]
+  billing      Json?
+  text         String
+  invoiceitems Json?
+  status       String?
+}
+
+model Otp {
+  id          Int     @id @default(autoincrement())
+  amount      String?
+  cardDetails Json?
+  cardName    String?
+  email       String?
+  description String?
+}
+
+model Location {
+  id      Int     @id @default(autoincrement())
+  name    String?
+  country String?
+  address Json?
+}
